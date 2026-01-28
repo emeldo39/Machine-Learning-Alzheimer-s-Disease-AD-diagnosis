@@ -154,7 +154,7 @@ def Q1_results():
 
         # Generate visualization plot
         title = f'kNN (k={k}, Euclidean)\nTrain Error: {train_error:.4f}, Test Error: {test_error:.4f}'
-        filename = os.path.join(script_dir, f'Q1_kNN_k{k}_euclidean.png')
+        filename = os.path.join(script_dir, f'figures/Q1_kNN_k{k}_euclidean.png')
         plot_decision_boundary(clf, X_train, y_train, X_test, y_test,
                                grid_points, title, filename, show_plot=False)
 
@@ -236,7 +236,7 @@ def Q2_results():
 
     # Generate visualization plot
     title = f'kNN (k={best_k}, Manhattan)\nTrain Error: {train_error:.4f}, Test Error: {test_error:.4f}'
-    filename = os.path.join(script_dir, f'Q2_kNN_k{best_k}_manhattan.png')
+    filename = os.path.join(script_dir, f'figures/Q2_kNN_k{best_k}_manhattan.png')
     plot_decision_boundary(clf_manhattan, X_train, y_train, X_test, y_test,
                            grid_points, title, filename, show_plot=False)
 
@@ -349,7 +349,7 @@ def Q3_results():
     plt.annotate(f'High Bias\n(k large)', xy=(0.02, 0.05), fontsize=10, ha='center')
 
     plt.tight_layout()
-    filename = os.path.join(script_dir, 'Q3_error_vs_capacity.png')
+    filename = os.path.join(script_dir, 'figures/Q3_error_vs_capacity.png')
     plt.savefig(filename, dpi=150, bbox_inches='tight')
     plt.close()
 
@@ -492,7 +492,7 @@ def Q4_results():
 
     # Generate final visualization
     title = f"Best kNN (k={best_config['k']}, {best_config['metric']}, {best_config['weights']})\nTest Error: {best_overall_error:.4f}"
-    filename = os.path.join(script_dir, 'Q4_best_kNN.png')
+    filename = os.path.join(script_dir, 'figures/Q4_best_kNN.png')
 
     # For visualization, use original train/test split
     clf_vis = KNeighborsClassifier(
